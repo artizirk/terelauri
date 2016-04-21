@@ -1,0 +1,13 @@
+[Unit]
+Description=Start sounds
+
+[Service]
+Type=forking
+WorkingDirectory=/home/alarm
+User=alarm
+ExecStart=/usr/bin/screen -dmS sound python /home/alarm/sound.py
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target
